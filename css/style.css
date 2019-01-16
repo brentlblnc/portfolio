@@ -22,9 +22,13 @@ body {
   display: flex;
   justify-content: space-between; }
   .nav__logo {
+    font-size: 1.5em;
     transition: 0.4s;
     user-select: none; }
+    .nav__logo--name {
+      font-size: 1.3em; }
   .nav__links {
+    transition: 0.4s;
     font-size: 1.3em;
     display: -webkit-box;
     display: -moz-box;
@@ -84,7 +88,7 @@ body {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 5em; }
@@ -93,10 +97,18 @@ body {
       text-align: center;
       width: 40%;
       display: block;
-      margin: auto; }
+      margin: auto;
+      margin-bottom: 2em; }
   .main__about {
     font-size: 1.3em; }
     .main__about--languages > img {
       width: 3%;
       margin-left: 1em;
       opacity: 0.5; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+
+i {
+  font-size: 2.2em; }
