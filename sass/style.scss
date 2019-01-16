@@ -38,7 +38,6 @@ body {
   opacity: 0.9;
   @include display-flex();
   justify-content: space-between;
-  
   &__logo {
     // Placeholder styling until logo actually gets used
     transition: 0.4s;

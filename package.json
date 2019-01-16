@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/brentlblnc/portfolio/issues"
   },
-  "homepage": "https://github.com/brentlblnc/portfolio#readme"
+  "homepage": "https://github.com/brentlblnc/portfolio#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "node-sass": "^4.11.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
