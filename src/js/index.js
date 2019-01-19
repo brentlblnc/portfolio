@@ -24,7 +24,39 @@ window.addEventListener("scroll", e => {
   }
 });
 
-// document.getElementsByClassName("row")[0].addEventListener("mouseenter", e => {
-//   console.log(1);
-// });
+let contactForm = document.querySelector("#contactForm");
+let name = document.querySelector("#txtName");
+let email = document.querySelector("#txtEmail");
+let subject = document.querySelector("#txtSubject");
+let message = document.querySelector("#txtMessage");
+let submitBtn = document.querySelector("#submitBtn");
+let feedback = document.querySelector("#feedback");
+let formData;
+let xmlHttp;
+
+contactForm.addEventListener("submit", e => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  feedback.innerHTML = "Please wait...";
+  formData = new FormData();
+  formData.append(name, name.value);
+  formData.append(email, email.value);
+  formData.append(subject, subject.value);
+  formData.append(message, message.value);
+  console.log(formData.name);
+  xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("POST", "handler.php");
+  xmlHttp.onreadystatechange = () => {
+    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+      if (xmlHttp.responseText == "success") {
+        contactForm.innerHTML = `<h2>Thanks ${name.value}, your message has been sent.</h2>`;
+        console.log("success");
+      } else {
+        feedback.innerHTML = xmlHttp.responseText;
+        submitBtn.disabled = false;
+        console.log("fail");
+      }
+    }
+  }
+});
 

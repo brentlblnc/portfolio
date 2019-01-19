@@ -139,28 +139,42 @@ body {
 
   &__projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em;
-    div {
+    .tile {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+    }
+    div.tile {
       height: auto;
       &:nth-child(odd) {
         background: #555D50;
       }
       background: #696969;
       padding: 1em;
-      position: relative;
       img {
-        display: block;
         max-width: 100%;
       }
       button {
         display: block;
         width: 100%;
         height: 4em;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
+        background: transparent;
+        border: solid 1px white;
+        color: white;
+        &:hover {
+          cursor: pointer;
+          background: $footer-color;
+          -webkit-transition: background .6s;
+          transition: background .6s;
+          border: none;
+        }
+        &:focus {
+          outline: none;
+        }
+        -webkit-transition: background .6s;
+        transition: background .6s;
       }
     }
   }
@@ -175,14 +189,14 @@ body {
     label {
       display: block;
     }
-    input[type="text"], input[type="button"] {
+    input[type="text"], input[type="email"], button[type="submit"] {
       height: 3em;
       border: solid 1px white;
     }
     textarea {
       border: solid 1px white;
     }
-    input[type="text"], textarea, input[type="button"] {
+    input[type="text"], input[type="email"], textarea, button[type="submit"] {
       -webkit-transition: background .6s;
       transition: background .6s;
       display: block;
@@ -195,12 +209,18 @@ body {
         border-color: $footer-color;
       }
     }
-    input[type="button"]:hover {
+    button[type="submit"]:hover {
       cursor: pointer;
       background: $footer-color;
       -webkit-transition: background .6s;
       transition: background .6s;
       border: none;
+    }
+    button[type="submit"] {
+      &:disabled {
+        color: gray;
+        background: none;
+      }
     }
   }
       

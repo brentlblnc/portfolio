@@ -96,6 +96,9 @@
             <i class="devicon-typescript-plain colored"></i>
             <i class="devicon-dot-net-plain-wordmark colored"></i>
           </div>
+          <div class="row">
+            <i class="devicon-wordpress-plain"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -104,24 +107,36 @@
 
 
     <div class="main__projects">
-      <div>
-        <img src="assets/img/quoteAdmin.PNG" alt="Quote admin app">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum neque numquam eum dolorum! Id obcaecati, quis dicta delectus reprehenderit voluptate suscipit quo tempore cumque necessitatibus, architecto ratione voluptatum ducimus unde rerum? Pariatur voluptates maxime quae vero. Facilis, totam nemo.
+      <div class="tile">
+        <div class="project">
+          <h3>Quote Generator Admin Web App</h3>
+          <img src="assets/img/quoteAdmin.PNG" alt="Quote admin app">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illum neque numquam eum dolorum! Id obcaecati, quis dicta delectus reprehenderit voluptate suscipit quo tempore cumque necessitatibus, architecto ratione voluptatum ducimus unde rerum? Pariatur voluptates maxime quae vero. Facilis, totam nemo.</p>
+        </div>
         <button>View Live</button>
       </div>
-      <div>
-        <img src="assets/img/APIjson.PNG" alt="Some code">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti labore inventore! Sit, iure aperiam aut quisquam nemo quis quaerat. Ut sunt, facere molestiae, voluptas, pariatur necessitatibus doloremque hic nulla repellendus magni accusamus? Deleniti accusantium ullam alias eligendi! Magnam, dolorum.
+      <div class="tile">
+        <div class="project">
+          <h3>API for Quote Generator</h3>
+          <img src="assets/img/APIjson.PNG" alt="Some code">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti labore inventore! Sit, iure aperiam aut quisquam nemo quis quaerat. Ut sunt, facere molestiae, voluptas, pariatur necessitatibus doloremque hic nulla repellendus magni accusamus? Deleniti accusantium ullam alias eligendi! Magnam, dolorum.</p>
+        </div>
         <button>View Live</button>
       </div>
-      <div>
-        <img src="assets/img/photoGallery.PNG" alt="Photo gallery demo">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, ut corrupti ex sunt perspiciatis voluptatem rem, molestias nostrum nobis amet eos, culpa at itaque? Ut vel perferendis quaerat accusantium provident voluptate facere repellat, dolores rerum obcaecati culpa eaque ad. Ducimus.
+      <div class="tile">
+        <div class="project">
+          <h3>Photo Gallery Web App</h3>
+          <img src="assets/img/photoGallery.PNG" alt="Photo gallery demo">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, ut corrupti ex sunt perspiciatis voluptatem rem, molestias nostrum nobis amet eos, culpa at itaque? Ut vel perferendis quaerat accusantium provident voluptate facere repellat, dolores rerum obcaecati culpa eaque ad. Ducimus.</p>
+        </div>
         <button>View Live</button>
       </div>
-      <div>
-        <img src="assets/img/techRosterMain.PNG" alt="Tech roster main page">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, nostrum minus dolor excepturi officia doloribus vel sit, ex dicta molestiae aut, illo ducimus ipsam velit maxime. Quas itaque vitae porro dolore, sapiente numquam dicta consequatur sunt sed maiores quos necessitatibus.
+      <div class="tile">
+        <div class="project">
+          <h3>Tech Roster Admin Web App</h3>
+          <img src="assets/img/techRosterMain.PNG" alt="Tech roster main page">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, nostrum minus dolor excepturi officia doloribus vel sit, ex dicta molestiae aut, illo ducimus ipsam velit maxime. Quas itaque vitae porro dolore, sapiente numquam dicta consequatur sunt sed maiores quos necessitatibus.</p>
+        </div>
         <button>View Live</button>
       </div>
       <div></div>
@@ -131,15 +146,19 @@
     <h1>Contact Me</h1>
     <hr>
     <div class="main__contact">
-      <label for="txtName">Name</label>
-      <input type="text" name="name" id="txtName" maxlength="50">
-      <label for="txtEmail">Email</label>
-      <input type="text" name="email" id="txtEmail" maxlength="50">
-      <label for="txtSubject">Subject</label>
-      <input type="text" name="subject" id="txtSubject" maxlength="50">
-      <label for="txtMessage">Message</label>
-      <textarea name="message" id="txtMessage" rows="10" maxlength="500"></textarea>
-      <input type="button" value="Send message">
+      <form id="contactForm" action="">
+        <label for="txtName">Name</label>
+        <input type="text" name="name" id="txtName" maxlength="50" >
+        <label for="txtEmail">Email</label>
+        <input type="email" name="email" id="txtEmail" maxlength="50" >
+        <label for="txtSubject">Subject</label>
+        <input type="text" name="subject" id="txtSubject" maxlength="50" >
+        <label for="txtMessage">Message</label>
+        <textarea name="message" id="txtMessage" rows="10" maxlength="500" ></textarea>
+        <button type="submit" id="submitBtn">Send Message</button>
+        <span id="feedback"></span>
+      </form>
+      
     </div>
 
     

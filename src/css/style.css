@@ -114,26 +114,37 @@ body {
     justify-content: space-between; }
   .main__projects {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em; }
-    .main__projects div {
+    .main__projects .tile {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between; }
+    .main__projects div.tile {
       height: auto;
       background: #696969;
-      padding: 1em;
-      position: relative; }
-      .main__projects div:nth-child(odd) {
+      padding: 1em; }
+      .main__projects div.tile:nth-child(odd) {
         background: #555D50; }
-      .main__projects div img {
-        display: block;
+      .main__projects div.tile img {
         max-width: 100%; }
-      .main__projects div button {
+      .main__projects div.tile button {
         display: block;
         width: 100%;
         height: 4em;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0; }
+        background: transparent;
+        border: solid 1px white;
+        color: white;
+        -webkit-transition: background .6s;
+        transition: background .6s; }
+        .main__projects div.tile button:hover {
+          cursor: pointer;
+          background: #ff3333;
+          -webkit-transition: background .6s;
+          transition: background .6s;
+          border: none; }
+        .main__projects div.tile button:focus {
+          outline: none; }
   .main__contact {
     display: -webkit-box;
     display: -moz-box;
@@ -145,12 +156,12 @@ body {
     justify-content: center; }
     .main__contact label {
       display: block; }
-    .main__contact input[type="text"], .main__contact input[type="button"] {
+    .main__contact input[type="text"], .main__contact input[type="email"], .main__contact button[type="submit"] {
       height: 3em;
       border: solid 1px white; }
     .main__contact textarea {
       border: solid 1px white; }
-    .main__contact input[type="text"], .main__contact textarea, .main__contact input[type="button"] {
+    .main__contact input[type="text"], .main__contact input[type="email"], .main__contact textarea, .main__contact button[type="submit"] {
       -webkit-transition: background .6s;
       transition: background .6s;
       display: block;
@@ -158,15 +169,18 @@ body {
       background: #2b2b2b;
       color: white;
       margin-bottom: 1em; }
-      .main__contact input[type="text"]:focus, .main__contact textarea:focus, .main__contact input[type="button"]:focus {
+      .main__contact input[type="text"]:focus, .main__contact input[type="email"]:focus, .main__contact textarea:focus, .main__contact button[type="submit"]:focus {
         outline: none;
         border-color: #ff3333; }
-    .main__contact input[type="button"]:hover {
+    .main__contact button[type="submit"]:hover {
       cursor: pointer;
       background: #ff3333;
       -webkit-transition: background .6s;
       transition: background .6s;
       border: none; }
+    .main__contact button[type="submit"]:disabled {
+      color: gray;
+      background: none; }
 
 ul {
   padding: 0;
