@@ -112,6 +112,28 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between; }
+  .main__projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em; }
+    .main__projects div {
+      height: auto;
+      background: #696969;
+      padding: 1em;
+      position: relative; }
+      .main__projects div:nth-child(odd) {
+        background: #555D50; }
+      .main__projects div img {
+        display: block;
+        max-width: 100%; }
+      .main__projects div button {
+        display: block;
+        width: 100%;
+        height: 4em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0; }
   .main__contact {
     display: -webkit-box;
     display: -moz-box;
@@ -129,6 +151,8 @@ body {
     .main__contact textarea {
       border: solid 1px white; }
     .main__contact input[type="text"], .main__contact textarea, .main__contact input[type="button"] {
+      -webkit-transition: background .6s;
+      transition: background .6s;
       display: block;
       width: 30vw;
       background: #2b2b2b;
@@ -137,6 +161,12 @@ body {
       .main__contact input[type="text"]:focus, .main__contact textarea:focus, .main__contact input[type="button"]:focus {
         outline: none;
         border-color: #ff3333; }
+    .main__contact input[type="button"]:hover {
+      cursor: pointer;
+      background: #ff3333;
+      -webkit-transition: background .6s;
+      transition: background .6s;
+      border: none; }
 
 ul {
   padding: 0;

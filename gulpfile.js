@@ -2,11 +2,11 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('styles', () =>
-        gulp.src('sass/**/*.scss')
+        gulp.src('src/sass/**/*.scss')
         .pipe(sass()
         .pipe(sass({sourcemap: true}))
         .on('error', sass.logError))
-        .pipe(gulp.dest('./css/'))
+        .pipe(gulp.dest('./src/css/'))
 );
 
-gulp.task('default', () => gulp.watch('sass/**/*.scss', gulp.series('styles')));
+gulp.task('default', () => gulp.watch('src/sass/**/*.scss', gulp.series('styles')));

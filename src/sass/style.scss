@@ -137,6 +137,36 @@ body {
     } 
   }
 
+  &__projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    div {
+      height: auto;
+      &:nth-child(odd) {
+        background: #555D50;
+      }
+      background: #696969;
+      padding: 1em;
+      position: relative;
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      button {
+        display: block;
+        width: 100%;
+        height: 4em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    }
+  }
+
+  
+
   &__contact {
     @include display-flex();
     flex-flow: column nowrap;
@@ -153,6 +183,8 @@ body {
       border: solid 1px white;
     }
     input[type="text"], textarea, input[type="button"] {
+      -webkit-transition: background .6s;
+      transition: background .6s;
       display: block;
       width: 30vw;
       background: $background-color;
@@ -162,6 +194,13 @@ body {
         outline: none;
         border-color: $footer-color;
       }
+    }
+    input[type="button"]:hover {
+      cursor: pointer;
+      background: $footer-color;
+      -webkit-transition: background .6s;
+      transition: background .6s;
+      border: none;
     }
   }
       
