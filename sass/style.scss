@@ -18,6 +18,10 @@ $hover-color: $background-color;
     flex: $args; 
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $background-color;
   color: white;
@@ -120,17 +124,48 @@ body {
       margin-bottom: 2em;
     }
   }
+
   &__about {
     font-size: 1.3em;
-    &--languages > img {
-      width: 3%;
-      margin-left: 1em;
-      opacity: 0.5;
+  }
+
+  &__skills {
+    .row {
+      @include display-flex();
+      flex-flow: row wrap;
+      justify-content: space-between;
+    } 
+  }
+
+  &__contact {
+    @include display-flex();
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    label {
+      display: block;
+    }
+    input[type="text"], input[type="button"] {
+      height: 3em;
+      border: solid 1px white;
+    }
+    textarea {
+      border: solid 1px white;
+    }
+    input[type="text"], textarea, input[type="button"] {
+      display: block;
+      width: 30vw;
+      background: $background-color;
+      color: white;
+      margin-bottom: 1em;
+      &:focus {
+        outline: none;
+        border-color: $footer-color;
+      }
     }
   }
-  
-  
-  
+      
+    
 }
 
 ul {
@@ -139,7 +174,9 @@ ul {
 }
 
 i {
-  font-size: 2.2em;
+  font-size: 3.5em;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 body {
   background-color: #2b2b2b;
   color: white;
@@ -101,14 +104,45 @@ body {
       margin-bottom: 2em; }
   .main__about {
     font-size: 1.3em; }
-    .main__about--languages > img {
-      width: 3%;
-      margin-left: 1em;
-      opacity: 0.5; }
+  .main__skills .row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+  .main__contact {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center; }
+    .main__contact label {
+      display: block; }
+    .main__contact input[type="text"], .main__contact input[type="button"] {
+      height: 3em;
+      border: solid 1px white; }
+    .main__contact textarea {
+      border: solid 1px white; }
+    .main__contact input[type="text"], .main__contact textarea, .main__contact input[type="button"] {
+      display: block;
+      width: 30vw;
+      background: #2b2b2b;
+      color: white;
+      margin-bottom: 1em; }
+      .main__contact input[type="text"]:focus, .main__contact textarea:focus, .main__contact input[type="button"]:focus {
+        outline: none;
+        border-color: #ff3333; }
 
 ul {
   padding: 0;
   margin: 0; }
 
 i {
-  font-size: 2.2em; }
+  font-size: 3.5em;
+  margin-right: 0.3em;
+  margin-bottom: 0.3em; }

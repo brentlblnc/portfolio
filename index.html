@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 </head>
@@ -19,8 +22,8 @@
       <div class="nav__logo--title">Web Developer</div>
     </div>
     <div class="nav__links">
-      <div class="nav__links--home"><ul><li>Home</li></ul></div>
       <div class="nav__links--about"><ul><li>About</li></ul></div>
+      <div class="nav__links--skills"><ul><li>Skills</li></ul></div>
       <div class="nav__links--projects"><ul><li>Projects</li></ul></div>
       <div class="nav__links--resume"><ul><li>Resume</li></ul></div>
       <div class="nav__links--contact"><ul><li>Contact</li></ul></div>
@@ -32,59 +35,97 @@
       <div><img alt="Brent LeBlanc" src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/32970383_10216557127148463_8792900590196752384_n.jpg?_nc_cat=100&_nc_ht=scontent-lga3-1.xx&oh=b9de5a999781b2478c6856cd64a98699&oe=5CA3EAFF" class="me"></div>
       <div><h2>I'm Brent, a web development student living in Truro, Nova Scotia.</h2></div>
     </div>
+    <h1>About Me</h1>
+    <hr>
     <div class="main__about">
-      <h1>About Me</h1>
       <p>I'm currently enrolled in the second year of the IT Web Programming concentration at Nova Scotia Community College. Developing meaningful applications for people is something I'm passionate about, and I'm always striving to improve myself wherever possible.
       </p>
-      <span style="font-size: 1.1em;"><strong>Languages:</strong></span>
-      <span class="main__about--languages">
-        <!-- <img src="https://cdn.svgporn.com/logos/html-5.svg" alt="HTML5">
-        <img src="https://cdn.svgporn.com/logos/css-3.svg" alt="CSS3">
-        <img src="https://cdn.svgporn.com/logos/javascript.svg" alt="ES6">
-        <img src="https://cdn.svgporn.com/logos/typescript-icon.svg" alt="TypeScript">
-        <img src="https://cdn.svgporn.com/logos/java.svg" alt="Java">
-        <img src="https://cdn.svgporn.com/logos/python.svg" alt="Python">
-        <img src="https://cdn.svgporn.com/logos/php.svg" alt="PHP">
-        <img src="https://cdn.svgporn.com/logos/dotnet.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/jquery.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/angular-icon.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/mongodb.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/express.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/nodejs-icon.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/sass.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/spring.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/createjs.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/git-icon.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/gulp.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/bootstrap.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/react.svg" alt="">
-        <img src="https://cdn.svgporn.com/logos/mysql.svg" alt=""> -->
-        <i class="devicon-html5-plain-wordmark colored"></i>
-        <i class="devicon-css3-plain-wordmark colored"></i>
-        <i class="devicon-javascript-plain colored"></i>
-        <i class="devicon-typescript-plain colored"></i>
-        <i class="devicon-java-plain-wordmark colored"></i>
-        <i class="devicon-python-plain-wordmark colored"></i>
-        <i class="devicon-php-plain colored"></i>
-        <i class="devicon-angularjs-plain colored"></i>
-        <i class="devicon-dot-net-plain-wordmark colored"></i>
-        <i class="devicon-jquery-plain-wordmark colored"></i>
-        <i class="devicon-express-original-wordmark"></i>
-        <i class="devicon-nodejs-plain-wordmark colored"></i>
-        <i class="devicon-sass-original colored"></i>
-        <i class="devicon-git-plain-wordmark colored"></i>
-        <i class="devicon-gulp-plain colored"></i>
-        <i class="devicon-bootstrap-plain colored"></i>
-        <i class="devicon-react-original-wordmark colored"></i>
-        <i class="devicon-mysql-plain colored"></i>
-      </span>
-      
-      
-      
-      
-      
-      
     </div>
+    <h1>Skills</h1>
+    <hr>
+    <div class="main__skills">
+      <div class="row">
+        <div class="main__skills--frontEnd">
+          <h2>Front End</h2>
+          <div class="row">
+            <i class="devicon-javascript-plain colored"></i>
+            <i class="devicon-angularjs-plain colored"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-jquery-plain colored"></i>
+            <i class="devicon-sass-original colored"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-bootstrap-plain colored"></i>
+            <i class="devicon-react-original colored"></i>
+          </div>
+        </div>
+        <div class="main__skills--backEnd">
+          <h2>Back End</h2>
+          <div class="row">
+            <i class="devicon-php-plain colored"></i>
+            <i class="devicon-express-original-wordmark"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-nodejs-plain colored"></i>
+            <i class="devicon-mongodb-plain-wordmark colored"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-mysql-plain colored"></i>
+            <i class="devicon-csharp-line colored"></i>
+          </div> 
+        </div>
+        <div class="main__skills--tools">
+          <h2>Tools</h2>
+          <div class="row">
+            <i class="devicon-git-plain colored"></i>
+            <i class="devicon-gulp-plain colored"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-trello-plain-wordmark colored"></i>
+            <i class="devicon-visualstudio-plain colored"></i>
+          </div>
+        </div>
+        <div class="main__skills--misc">
+          <h2>Misc.</h2>
+          <div class="row">
+            <i class="devicon-java-plain colored"></i>
+            <i class="devicon-python-plain colored"></i>
+          </div>
+          <div class="row">
+            <i class="devicon-typescript-plain colored"></i>
+            <i class="devicon-dot-net-plain-wordmark colored"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>Projects</h1>
+    <hr>
+    <div class="main__projects">
+
+    </div>
+    <h1>Contact Me</h1>
+    <hr>
+    <div class="main__contact">
+      <label for="txtName">Name</label>
+      <input type="text" name="name" id="txtName" maxlength="50">
+      <label for="txtEmail">Email</label>
+      <input type="text" name="email" id="txtEmail" maxlength="50">
+      <label for="txtSubject">Subject</label>
+      <input type="text" name="subject" id="txtSubject" maxlength="50">
+      <label for="txtMessage">Message</label>
+      <textarea name="message" id="txtMessage" rows="10" maxlength="500"></textarea>
+      <input type="button" value="Send message">
+    </div>
+
+    
+      
+      
+      
+      
+      
+      
+    
   </div>
 
   
@@ -100,7 +141,7 @@
   <div class="footer">
     <div class="footer__content">
       <div class="copyright">
-        Copyright &copy; <span id="year"></span> Brent LeBlanc. All rights reserved.
+        &copy; <span id="year"></span> | Brent LeBlanc | All Rights Reserved
       </div>
       <div id="backToTop">Back to Top</div>
     </div>
