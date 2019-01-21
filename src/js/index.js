@@ -1,14 +1,14 @@
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
-document.getElementById("backToTop").addEventListener("click", e => {
-  window.scroll({top: 0, behavior: "smooth"});
-});
+
 
 $("li").click(function(e) {
   e.preventDefault();
   $("li").removeClass('active');
   $(this).addClass('active');
 });
+
+
 
 
 
@@ -23,6 +23,21 @@ window.addEventListener("scroll", e => {
     document.getElementsByClassName("nav")[0].style.backgroundColor = "#2b2b2b";
   }
 });
+
+
+document.getElementsByClassName("menu")[0].addEventListener("click", toggleSideMenu);
+
+function toggleSideMenu(e) {
+  //e.preventDefault();
+  if (document.querySelector(".nav-mobile__links").style.left == "0px") {
+    document.querySelector(".nav-mobile__links").style.left = "-200px";
+    document.querySelector(".menu").style.color = "#fff";
+  } else {
+    document.querySelector(".nav-mobile__links").style.left = "0px";
+    document.querySelector(".nav-mobile__links").style.position = "absolute";
+    document.querySelector(".menu").style.color = "#000";
+  }
+}
 
 let contactForm = document.querySelector("#contactForm");
 let name = document.querySelector("#txtName");
@@ -43,20 +58,23 @@ contactForm.addEventListener("submit", e => {
   formData.append(email, email.value);
   formData.append(subject, subject.value);
   formData.append(message, message.value);
-  console.log(formData.name);
+  
   xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("POST", "handler.php");
+  xmlHttp.open("POST", "./../src/php/handler.php");
+  xmlHttp.send(formData);
   xmlHttp.onreadystatechange = () => {
+    console.log(2);
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
       if (xmlHttp.responseText == "success") {
         contactForm.innerHTML = `<h2>Thanks ${name.value}, your message has been sent.</h2>`;
         console.log("success");
       } else {
-        feedback.innerHTML = xmlHttp.responseText;
+        // alert(xmlHttp.responseText);
         submitBtn.disabled = false;
         console.log("fail");
       }
-    }
+    } 
   }
+  
 });
 

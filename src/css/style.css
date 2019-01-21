@@ -52,6 +52,9 @@ body {
     .nav__links :not(:last-child) {
       margin-right: 1.5em; }
 
+.nav-mobile {
+  display: none; }
+
 .footer {
   opacity: 0.9;
   background-color: #ff3333;
@@ -68,7 +71,12 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     padding: 1em 4em 1em 4em; }
+    .footer__content--social > a {
+      color: #2b2b2b; }
+      .footer__content--social > a:hover {
+        opacity: 0.7; }
 
 #backToTop:hover {
   cursor: pointer;
@@ -114,7 +122,7 @@ body {
     justify-content: space-between; }
   .main__projects {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em; }
     .main__projects .tile {
       display: flex;
@@ -190,3 +198,61 @@ i {
   font-size: 3.5em;
   margin-right: 0.3em;
   margin-bottom: 0.3em; }
+  i.fa.fa-spinner.fa-spin {
+    display: none; }
+
+@media screen and (max-width: 847px) {
+  .nav {
+    display: none; }
+  .nav-mobile {
+    display: block;
+    z-index: 1;
+    position: sticky;
+    background: #ff3333;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 0.8em; }
+    .nav-mobile ul {
+      list-style: none; }
+    .nav-mobile__logo {
+      text-align: center; }
+      .nav-mobile__logo--title {
+        padding-bottom: 0.5em; }
+    .nav-mobile i.fas.fa-bars {
+      margin: 0;
+      padding: 0;
+      font-size: 2.5em; }
+    .nav-mobile__links {
+      background: inherit;
+      position: fixed;
+      left: -200px;
+      display: block;
+      padding: 2em;
+      overflow-x: hidden;
+      text-align: center;
+      line-height: 2;
+      transition: all .6s ease-in-out; }
+      .nav-mobile__links--close {
+        font-size: 2.2em; }
+  .main {
+    padding: 1em;
+    text-align: center; }
+    .main__projects {
+      grid-template-columns: 1fr; }
+    .main__contact input[type="text"], .main__contact input[type="email"], .main__contact textarea, .main__contact button[type="submit"] {
+      width: 90vw; }
+  .footer {
+    text-align: center; }
+    .footer__content {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-flow: column-reverse nowrap; } }
+
+@media screen and (min-width: 760px) and (max-width: 847px) {
+  .main__projects {
+    grid-template-columns: repeat(2, 1fr); } }

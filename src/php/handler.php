@@ -1,9 +1,9 @@
 <?php
-    if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $subject = $_POST['subject'];
-        $message = nl2br($_POST['message']);
+    if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['subject']) && !empty($_GET['message'])) {
+        $name = $_GET['name'];
+        $email = $_GET['email'];
+        $subject = $_GET['subject'];
+        $message = nl2br($_GET['message']);
         $to = "bcodey@hotmail.com";
         $from = $email;
         $message = "<b>Name:</b> " . $name . "<br><b>Email:</b> " . $email . "<p>$message</p>";
@@ -16,5 +16,5 @@
             echo "The server failed to send the message";
         }
 
-    }
+    } 
 ?>
