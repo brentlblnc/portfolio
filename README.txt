@@ -1,3 +1,3 @@
-A Pen created at CodePen.io. You can find this one at https://codepen.io/brentlblnc/pen/aPXVVp.
+Portfolio nearing completion, check back soon.
 
  
