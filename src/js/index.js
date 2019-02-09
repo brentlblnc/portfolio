@@ -18,9 +18,8 @@
   let projectsList = null;
 
   // ------------------------------------------------ Event listeners
-  window.on("load", fadeInImg);
 
-  window.on("DOMContentLoaded", main);
+  window.on("load", main);
 
   window.on("scroll", navAdjust);
 
@@ -130,13 +129,6 @@
       select(".nav").style.padding = "1em 4em 1em 4em";
       select(".nav").style.backgroundColor = "#2b2b2b";
     }
-  }
-
-  function fadeInImg(e) {
-    setTimeout(() => {
-      select(".main__intro").style.marginTop = 0;
-      select(".main__intro").style.opacity = 1;
-    }, 300);
   }
 
   function toggleSideMenu(e) {

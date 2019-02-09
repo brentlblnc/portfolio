@@ -3,6 +3,17 @@ $footer-color: hsl(0, 100%, 60%);
 $background-color: #2b2b2b;
 $hover-color: $background-color;
 
+@keyframes fadeInImg {
+  0% {
+    opacity: 0;
+    margin-top: 5em;
+  }
+  100% {
+    opacity: 1.0;
+    margin-top: 0;
+  }
+}
+
 @mixin display-flex() {
     display: -webkit-box;
     display: -moz-box;
@@ -38,7 +49,7 @@ a {
   z-index: 2;
   // -webkit-transition: 0.4s;
   // transition: 0.4s;
-  @include transition(0.4s);
+  @include transition(padding-top 0.4s, padding-bottom 0.4s, background-color 0.4s);
   position: sticky;
   left: 0;
   top: 0;
@@ -57,15 +68,17 @@ a {
     font-size: 1.5em;
     // -webkit-transition: 0.4s;
     // transition: 0.4s;
-    @include transition(0.4s);
+    //@include transition(0.4s);
     user-select: none;
   }
   &__links {
     // -webkit-transition: 0.4s;
     // transition: 0.4s;
-    @include transition(0.4s);
+    //@include transition(0.4s);
     li {
+      color: white;
       list-style-type: none;
+      //@include transition(color 0.6s);
       &:hover {
         cursor: pointer;
         color: $hover-color;
@@ -73,11 +86,9 @@ a {
         // transition: color .6s;
         @include transition(color .6s);
       }
-      &:not(:hover) {
-        // -webkit-transition: color .6s;
-        // transition: color .6s;
-        @include transition(color .6s);
-      }
+      
+  
+      
     }
     font-size: 1.3em;
     @include display-flex();
@@ -127,13 +138,14 @@ a {
   padding: 1em 4em 1em 4em;
   &__intro {
     @include display-flex();
-    opacity: 0;
-    @include transition(all 1.3s);
+    //opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5em;
+    //margin-top: 5em;
     margin-bottom: 5em;
+    //@include transition(margin-top 1.3s, opacity 1.3s);
+    animation: fadeInImg 1.3s ease-in-out;
     .me {
       border-radius: 50%;
       text-align: center;
