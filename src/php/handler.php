@@ -1,9 +1,9 @@
 <?php
-    if (!empty($_GET['name']) && !empty($_GET['email']) && !empty($_GET['subject']) && !empty($_GET['message'])) {
-        $name = $_GET['name'];
-        $email = $_GET['email'];
-        $subject = $_GET['subject'];
-        $message = nl2br($_GET['message']);
+    if (!empty($POST['name']) && !empty($POST['email']) && !empty($POST['subject']) && !empty($POST['message'])) {
+        $name = $POST['name'];
+        $email = $POST['email'];
+        $subject = $POST['subject'];
+        $message = nl2br($POST['message']);
         $to = "bcodey@hotmail.com";
         $from = $email;
         $message = "<b>Name:</b> " . $name . "<br><b>Email:</b> " . $email . "<p>$message</p>";

@@ -30,6 +30,10 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .nav {
   z-index: 2;
   // -webkit-transition: 0.4s;
@@ -124,10 +128,11 @@ body {
   &__intro {
     @include display-flex();
     opacity: 0;
-    @include transition(opacity 2.8s);
+    @include transition(all 1.3s);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 5em;
     margin-bottom: 5em;
     .me {
       border-radius: 50%;

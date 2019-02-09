@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Tech Roster Admin Web App",
+        "description": "This was a pretty good project fam",
+        "img": "assets/img/techRosterEdit.PNG",
+        "link": "http://google.ca"
+    },
+    {
+        "id": 2,
+        "name": "Photo Gallery Web App",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "img": "assets/img/photoGallery.PNG",
+        "link": "http://google.ca"
+    },
+    {
+        "id": 3,
+        "name": "Quote Generator Admin Web App",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "img": "assets/img/quoteAdmin.PNG",
+        "link": "http://quotegeneratoradmin.azurewebsites.net/"
+    },
+    {
+        "id": 4,
+        "name": "API for Quote Generator",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "img": "assets/img/APIjson.PNG",
+        "link": "http://quotesapi.azurewebsites.net/quotes/1"
+    },
+    {
+        "id": 5,
+        "name": "JavaScript Weather App",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "img": "assets/img/weatherReporter.PNG",
+        "link": "http://weather-reporter.azurewebsites.net/"
+    },
+    {
+        "id": 6,
+        "name": "Staghorn Shooting Club Website",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "img": "assets/img/staghorn.png",
+        "link": "https://staghornshootingclub.leblancb.nscctruro.ca/"
+    }
+]
