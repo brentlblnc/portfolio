@@ -30,5 +30,5 @@ class CookieManager {
     }  
 }
 
-export {CookieManager};
+export { CookieManager };
 // ------------------------------------------------------

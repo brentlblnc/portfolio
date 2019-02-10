@@ -1,7 +1,8 @@
-//import {CookieManager} from "./CookieManager";
+import { CookieManager } from "./CookieManager";
+
 (function() {
   
-  //let cookieManager = null;
+  let cookieManager = null;
   const contactForm = select("#contactForm");
   const name = select("#txtName");
   const email = select("#txtEmail");
@@ -45,7 +46,8 @@
 
   // ------------------------------------------------- Event handlers
   function main(e) {
-    //cookieManager = new CookieManager();
+    cookieManager = new CookieManager();
+    
     // Populate footer with current year
     select("#year").innerHTML = new Date().getFullYear();
 
@@ -99,9 +101,10 @@
   }
 
   function test2(project, img) {
+   
     return function(e) {
-      console.log(document.documentElement.scrollTop);
-      console.log(document.body.scrollTop);
+      //console.log(window.pageYOffset);
+      cookieManager.setCookie("WindowLocation", window.pageYOffset, 365);
       $(window).scrollTop($("#projects").offset().top - 200);
       while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
       projectsElem.innerHTML = `<div class="tile"><img src=${img.src}></div>`;
@@ -114,6 +117,7 @@
       while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
         
       test(projectsList);
+      document.documentElement.scrollTop = document.body.scrollTop = cookieManager.getCookie("WindowLocation");
         
         
       });
