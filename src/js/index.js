@@ -104,7 +104,7 @@ import { CookieManager } from "./CookieManager";
    
     return function(e) {
       //console.log(window.pageYOffset);
-      cookieManager.setCookie("WindowLocation", window.pageYOffset, 365);
+      cookieManager.setCookie("WindowLocation", document.documentElement.scrollTop || document.body.scrollTop, 365);
       $(window).scrollTop($("#projects").offset().top - 200);
       while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
       projectsElem.innerHTML = `<div class="tile"><img src=${img.src}></div>`;
