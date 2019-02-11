@@ -1,6 +1,6 @@
+import { CookieManager } from './CookieManager';
+
 (function() {
-  
-  let cookieManager = null;
   const contactForm = select("#contactForm");
   const name = select("#txtName");
   const email = select("#txtEmail");
@@ -12,10 +12,10 @@
   const menu = select(".menu");
   const projectsElem = select("#projects");
   EventTarget.prototype.on = EventTarget.prototype.addEventListener;
+  let cookieManager = null;
   let formData = null;
   let xmlHttp = null;
   let projectsList = null;
-  let scrollTop = null;
 
   // ------------------------------------------------ Event listeners
 
@@ -45,8 +45,6 @@
 
   // ------------------------------------------------- Event handlers
   function main(e) {
-    //cookieManager = new CookieManager();
-    
     // Populate footer with current year
     select("#year").innerHTML = new Date().getFullYear();
 
@@ -71,7 +69,7 @@
     xmlHttp.onreadystatechange = () => {
       if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
         projectsList = JSON.parse(xmlHttp.responseText);
-        test(projectsList);
+        loadProjects(projectsList);
       } 
     }
     xmlHttp.send();
@@ -79,7 +77,7 @@
     
   }
 
-  function test(projects) {
+  function loadProjects(projects) {
     projects.map(project => {
 
       let tile = projectsElem.appendChild(document.createElement("div"));
@@ -92,31 +90,32 @@
       img.id = `img${project.id}`;
       img.src = project.img;
       
-      select(`#${img.id}`).on("click", test2(project, img));
+      select(`#${img.id}`).on("click", projectView(project, img));
       
     });
 
     
   }
 
-  function test2(project, img) {
-   
+  function projectView(project, img) {
     return function(e) {
-      //console.log(window.pageYOffset);
-      scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      cookieManager = new CookieManager();
+      cookieManager.setCookie("SCROLLTOP", document.documentElement.scrollTop || document.body.scrollTop, 365);
       $(window).scrollTop($("#projects").offset().top - 200);
-      while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
+      while (projectsElem.firstChild) {
+        projectsElem.removeChild(projectsElem.firstChild);
+      }
       projectsElem.innerHTML = `<div class="tile"><img src=${img.src}></div>`;
-      
       projectsElem.innerHTML += project.description;
       projectsElem.innerHTML += "<i class='fas fa-backspace' id='close'></i>";
 
       select("#close").on("click", e => {
+      while (projectsElem.firstChild) {
+        projectsElem.removeChild(projectsElem.firstChild);
+      }
         
-      while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
-        
-      test(projectsList);
-      document.documentElement.scrollTop = document.body.scrollTop = scrollTop;
+      loadProjects(projectsList);
+      document.documentElement.scrollTop = document.body.scrollTop = cookieManager.getCookie("SCROLLTOP");
       });
     }
     
