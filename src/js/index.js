@@ -1,5 +1,3 @@
-import { CookieManager } from "./CookieManager";
-
 (function() {
   
   let cookieManager = null;
@@ -17,6 +15,7 @@ import { CookieManager } from "./CookieManager";
   let formData = null;
   let xmlHttp = null;
   let projectsList = null;
+  let scrollTop = null;
 
   // ------------------------------------------------ Event listeners
 
@@ -46,7 +45,7 @@ import { CookieManager } from "./CookieManager";
 
   // ------------------------------------------------- Event handlers
   function main(e) {
-    cookieManager = new CookieManager();
+    //cookieManager = new CookieManager();
     
     // Populate footer with current year
     select("#year").innerHTML = new Date().getFullYear();
@@ -104,7 +103,7 @@ import { CookieManager } from "./CookieManager";
    
     return function(e) {
       //console.log(window.pageYOffset);
-      cookieManager.setCookie("WindowLocation", document.documentElement.scrollTop || document.body.scrollTop, 365);
+      scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       $(window).scrollTop($("#projects").offset().top - 200);
       while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
       projectsElem.innerHTML = `<div class="tile"><img src=${img.src}></div>`;
@@ -117,9 +116,7 @@ import { CookieManager } from "./CookieManager";
       while (projectsElem.firstChild) projectsElem.removeChild(projectsElem.firstChild);
         
       test(projectsList);
-      document.documentElement.scrollTop = document.body.scrollTop = cookieManager.getCookie("WindowLocation");
-        
-        
+      document.documentElement.scrollTop = document.body.scrollTop = scrollTop;
       });
     }
     
