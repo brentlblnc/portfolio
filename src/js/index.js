@@ -26,7 +26,7 @@ import { CookieManager } from './CookieManager';
 
   menu.on("click", toggleSideMenu);
 
-  contactForm.on("submit", sendEmail);
+  //contactForm.on("submit", sendEmail);
 
   for (let link of linksContainer.childNodes) {
     link.on("click", toggleSideMenu);
@@ -165,32 +165,32 @@ import { CookieManager } from './CookieManager';
     }
   }
 
-  function sendEmail(e) {
-    e.preventDefault();
+  // function sendEmail(e) {
+  //   e.preventDefault();
     
-    submitBtn.disabled = true;
-    feedback.innerHTML = "Please wait...";
-    formData = new FormData();
-    formData.append(name, name.value);
-    formData.append(email, email.value);
-    formData.append(subject, subject.value);
-    formData.append(message, message.value);
+  //   submitBtn.disabled = true;
+  //   feedback.innerHTML = "Please wait...";
+  //   formData = new FormData();
+  //   formData.append(name, name.value);
+  //   formData.append(email, email.value);
+  //   formData.append(subject, subject.value);
+  //   formData.append(message, message.value);
     
-    xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "./../src/php/handler.php");
-    xmlHttp.send(formData);
-    xmlHttp.onreadystatechange = () => {
-      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-        if (xmlHttp.responseText == "success") {
-          contactForm.innerHTML = `<h2>Thanks ${name.value}, your message has been sent.</h2>`;
-          console.log("success");
-        } else {
-          submitBtn.disabled = false;
-          console.log("fail");
-        }
-      } 
-    }
-  }
+  //   xmlHttp = new XMLHttpRequest();
+  //   xmlHttp.open("POST", "./../src/php/handler.php");
+  //   xmlHttp.send(formData);
+  //   xmlHttp.onreadystatechange = () => {
+  //     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+  //       if (xmlHttp.responseText == "success") {
+  //         contactForm.innerHTML = `<h2>Thanks ${name.value}, your message has been sent.</h2>`;
+  //         console.log("success");
+  //       } else {
+  //         submitBtn.disabled = false;
+  //         console.log("fail");
+  //       }
+  //     } 
+  //   }
+  // }
 
 })();
 
