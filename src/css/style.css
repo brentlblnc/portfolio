@@ -173,7 +173,16 @@ a {
         display: -webkit-flex;
         display: flex;
         flex-direction: column; }
+        .main__projectView .project .column .buttons i {
+          -webkit-transition: color 0.4s;
+          transition: color 0.4s;
+          align-self: start;
+          color: #ff3333; }
+          .main__projectView .project .column .buttons i:hover {
+            cursor: pointer;
+            color: white; }
         .main__projectView .project .column .buttons a {
+          align-self: start;
           display: inline-block;
           padding-bottom: 1em;
           color: #ff3333;

@@ -195,7 +195,17 @@ a {
         .buttons {
           @include display-flex();
           flex-direction: column;
+          i {
+            @include transition(color 0.4s);
+            align-self: start;
+            color: $footer-color;
+            &:hover {
+              cursor: pointer;
+              color: white;
+            }
+          }
           a {
+            align-self: start;
             display: inline-block;
             padding-bottom: 1em;
             color: $footer-color;

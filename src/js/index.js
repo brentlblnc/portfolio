@@ -124,7 +124,7 @@ import { CookieManager } from './CookieManager';
             <p>${project.description}</p>
             <div class="buttons">
               ${project.hasOwnProperty("link") ? `<a href=${project.link} target="_blank">View Live</a>` : ''}
-              <i class="fas fa-backspace fa-3x" id="close"></i>
+              <i class="fas fa-arrow-left fa-3x" id="close"></i>
             </div>
           </div>
         </div>
