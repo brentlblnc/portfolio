@@ -2,42 +2,40 @@
     {
         "id": 1,
         "name": "Tech Roster Admin Web App",
-        "description": "This was a pretty good project fam",
-        "img": "assets/img/techRosterEdit.PNG",
-        "link": "http://google.ca"
+        "description": "<p>The tech roster is a MEAN stack web app where users can add, update, or delete technologies and courses. The front end was built with Angular 4 and uses custom routes for each component.</p><p>When the list is changed, a custom data service handles requests to the Node.js and Express.js backend, which pulls data from a MongoDB database. I don't currently have this project hosted, but if you'd like to see code samples, don't hesitate to ask!</p>",
+        "img": "assets/img/techRosterEdit.PNG"
     },
     {
         "id": 2,
         "name": "Photo Gallery Web App",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
-        "img": "assets/img/photoGallery.PNG",
-        "link": "http://google.ca"
+        "description": "<p>This is a simple photo app that allows users to navigate through photos, jump to a particular photo, and add comments. This project started off as a JavaScript app in first year, then it was rebuilt in Angular, and finally, MEAN stack.</p><p>For the MEAN stack version, I populated a MongoDB collection with data containing each image's title, description, and file name. A custom data service handles the submission of comments, which are pushed to the MongoDB database and added onto the page wiithout reloading it. The web server was fired up via Node.js and Express.js. I don't currently have this project hosted, but if you'd like to see code samples, don't hesitate to ask!</p>",
+        "img": "assets/img/photoGallery.PNG"
     },
     {
         "id": 3,
         "name": "Quote Generator Admin Web App",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "description": "<p>This is an app built in Microsoft's ASP.NET Core that enables users to add or delete quotes. To add a quote, users must enter an author, quote, link to quote, and upload an image. If the server side validation passes, the app connects to a MySQL database and adds a record with the new quote data.</p><p>Once a quote is successfully added, the quote will appear in a dropdown menu below and a success message will be displayed at the top. In the Delete Quote section, you can delete the quote or any other quotes in the database. If there's no quotes in the database, an appropriate message is displayed and the delete button is disabled.</p>",
         "img": "assets/img/quoteAdmin.PNG",
         "link": "http://quotegeneratoradmin.azurewebsites.net/"
     },
     {
         "id": 4,
         "name": "API for Quote Generator",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "description": "<p>The second part to the Quote Generator Admin web app was to build an API using C#'s Web API framework. The API fetches data from the MySQL database containing the quotes, and displays them as JSON on the webpage. The quotes are displayed in random order and you can specify how many quotes to retrieve like so: http://quotesapi.azurewebsites.net/quotes/[NUMBER OF QUOTES]. If no quotes are found, a response code of 404 is returned with an error message.</p>",
         "img": "assets/img/APIjson.PNG",
         "link": "http://quotesapi.azurewebsites.net/quotes/1"
     },
     {
         "id": 5,
         "name": "JavaScript Weather App",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.Lorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisic",
+        "description": "<p>This was my first major project using vanilla JavaScript. The _Weather Reporter is a web app that displays weather data for a selected city. It will show information such as sunset / sunrise times, high / current / low temperatures, humidity, air pressure, and wind. When the app first loads, an AJAX request is sent to a local XML file containing a list of 100 Canadian cities, then the dropdown list is populated with those cities.</p><p>A second AJAX request is sent to OpenWeatherMap's public API which returns the weather data corresponding to the selected city. This was made using HTML5, JavaScript, and Sass / Flexbox for styling and responsiveness.</p>",
         "img": "assets/img/weatherReporter.PNG",
         "link": "http://weather-reporter.azurewebsites.net/"
     },
     {
         "id": 6,
         "name": "Staghorn Shooting Club Website",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "description": "<p>During my campus-based field experience at the end of first year, I had the opportunity to develop an official website for the Staghorn Shooting Club, based in Stellarton. This was my first extensive exercise in WordPress development and it was a valuable learning experience. I personally customized an existing theme with CSS and dabbled in some PHP to enable or disable certain widgets on the page. I used quite a bit of Flexbox as well as media queries in this project for responsiveness.</p>",
         "img": "assets/img/staghorn.png",
         "link": "https://staghornshootingclub.leblancb.nscctruro.ca/"
     }

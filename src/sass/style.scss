@@ -1,4 +1,3 @@
-//$nav-color: hsl(0, 100%, 60%);
 $footer-color: hsl(0, 100%, 60%);
 $background-color: #2b2b2b;
 $hover-color: $background-color;
@@ -6,11 +5,9 @@ $hover-color: $background-color;
 @keyframes fadeInImg {
   0% {
     opacity: 0;
-    margin-top: 5em;
   }
   100% {
     opacity: 1.0;
-    margin-top: 0;
   }
 }
 
@@ -39,7 +36,26 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+  .loadingOverlay {
+    position: fixed;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: show;
+    margin: auto;
+    background-color: $background-color;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: $footer-color;
+    font-size: 48px;
+  }
 }
+
+
 
 a {
   text-decoration: none;
@@ -47,14 +63,12 @@ a {
 
 .nav {
   z-index: 2;
-  // -webkit-transition: 0.4s;
-  // transition: 0.4s;
   @include transition(padding-top 0.4s, padding-bottom 0.4s, background-color 0.4s);
   position: sticky;
   left: 0;
   top: 0;
   right: 0;
-  padding: 1em 4em 1em 4em;
+  padding: 1em 5em 1em 5em;
   margin-bottom: 2em;
   background-color: $footer-color;
   opacity: 0.9;
@@ -68,16 +82,9 @@ a {
     &--title {
       font-size: 1.2em;
     }
-    //font-size: 1.3em;
-    // -webkit-transition: 0.4s;
-    // transition: 0.4s;
-    //@include transition(0.4s);
     user-select: none;
   }
   &__links {
-    // -webkit-transition: 0.4s;
-    // transition: 0.4s;
-    //@include transition(0.4s);
     li {
       color: white;
       list-style-type: none;
@@ -86,12 +93,7 @@ a {
       &:hover {
         cursor: pointer;
         color: $hover-color;
-        // -webkit-transition: color .6s;
-        // transition: color .6s;
       }
-      
-  
-      
     }
     font-size: 1.3em;
     @include display-flex();
@@ -119,7 +121,7 @@ a {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 4em 1em 4em;
+    padding: 1em 5em 1em 5em;
     &--social > a {
       color: $background-color;
       &:hover {
@@ -133,22 +135,18 @@ a {
   }
 }
 
-.active {
-  border-top: solid 2px $hover-color;
+.fadeIn {
+  animation: fadeInImg 2s ease-in-out;
 }
 
 .main {
-  padding: 1em 4em 1em 4em;
+  padding: 1em 5em 1em 5em;
   &__intro {
     @include display-flex();
-    //opacity: 0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //margin-top: 5em;
-    margin-bottom: 5em;
-    //@include transition(margin-top 1.3s, opacity 1.3s);
-    animation: fadeInImg 1.3s ease-in-out;
+    margin-bottom: 2em;
     .me {
       border-radius: 50%;
       text-align: center;
@@ -160,7 +158,15 @@ a {
   }
 
   &__about {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    line-height: 1.5;
+    a {
+      @include transition(color 0.4s);
+      color: $footer-color;
+      &:hover {
+        color: white;
+      }
+    }
   }
 
   &__skills {
@@ -213,7 +219,6 @@ a {
     }
     
     p {
-      //max-width: 50%;
       margin: 0 1em 1em 0;
       padding: 0;
     }
@@ -235,9 +240,16 @@ a {
         //padding: 0;
       }
       .project {
-        &:hover {
-          opacity: 0.9;
-          cursor: pointer;
+        button {
+          @include transition(background 0.4s);
+          width: 100%;
+          background: $footer-color;
+          padding: 1em;
+          border: 0;
+          &:hover {
+            cursor: pointer;
+            background: lighten($footer-color, 4%);
+          }
         }
       }
     }
@@ -251,62 +263,58 @@ a {
       img {
         max-width: 100%;
       }
-      // button {
-      //   display: block;
-      //   width: 100%;
-      
-      //   &:focus {
-      //     outline: none;
-      //   }
-      //   // -webkit-transition: background .6s;
-      //   // transition: background .6s;
-      //   @include transition(background .6s);
-      // }
     }
   }
   &__contact {
-    @include display-flex();
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    label {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: center;
+    a {
       display: block;
-    }
-    input[type="text"], input[type="email"], button[type="submit"] {
-      height: 3em;
-      border: solid 1px white;
-    }
-    textarea {
-      border: solid 1px white;
-    }
-    input[type="text"], input[type="email"], textarea, button[type="submit"] {
-      // -webkit-transition: background .6s;
-      // transition: background .6s;
-      @include transition(background .6s);
-      display: block;
-      width: 30vw;
-      background: $background-color;
-      color: white;
-      margin-bottom: 1em;
-      &:focus {
-        outline: none;
-        border-color: $footer-color;
+      @include transition(color 0.4s);
+      color: $footer-color;
+      &:hover {
+        color: white;
       }
     }
-    button[type="submit"]:hover {
-      cursor: pointer;
-      background: $footer-color;
-      // -webkit-transition: background .6s;
-      // transition: background .6s;
-      @include transition(background .6s);
-      border: none;
-    }
-    button[type="submit"] {
-      &:disabled {
-        color: gray;
-        background: none;
-      }
-    }
+    // @include display-flex();
+    // flex-flow: column nowrap;
+    // align-items: center;
+    // justify-content: center;
+    // label {
+    //   display: block;
+    // }
+    // input[type="text"], input[type="email"], button[type="submit"] {
+    //   height: 3em;
+    //   border: solid 1px white;
+    // }
+    // textarea {
+    //   border: solid 1px white;
+    // }
+    // input[type="text"], input[type="email"], textarea, button[type="submit"] {
+    //   @include transition(background .6s);
+    //   display: block;
+    //   width: 30vw;
+    //   background: $background-color;
+    //   color: white;
+    //   margin-bottom: 1em;
+    //   &:focus {
+    //     outline: none;
+    //     border-color: $footer-color;
+    //   }
+    // }
+    // button[type="submit"]:hover {
+    //   cursor: pointer;
+    //   background: $footer-color;
+    //   @include transition(background .6s);
+    //   border: none;
+    // }
+    // button[type="submit"] {
+    //   &:disabled {
+    //     color: gray;
+    //     background: none;
+    //   }
+    // }
   }
 }
 
@@ -316,7 +324,7 @@ ul {
 }
 
 hr {
-    background-image: linear-gradient(90deg, red, transparent);
+    background: $footer-color;
     border: 0;
     height: 2px;
 }
@@ -367,15 +375,12 @@ hr {
       overflow-x: hidden;
       text-align: center;
       line-height: 2;
-      // -webkit-transition: all .6s ease-in-out;
-      // transition: all .6s ease-in-out;
       @include transition(all .6s ease-in-out);
     }
   }
 
   .main {
     padding: 1em;
-    //text-align: left;
     &__projects {
       grid-template-columns: 1fr;
     }

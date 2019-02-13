@@ -1,6 +1,7 @@
 import { CookieManager } from './CookieManager';
 
 (function() {
+  const loadingOverlay = select(".loadingOverlay");
   const contactForm = select("#contactForm");
   const name = select("#txtName");
   const email = select("#txtEmail");
@@ -18,7 +19,7 @@ import { CookieManager } from './CookieManager';
   let projectsList = null;
 
   // ------------------------------------------------ Event listeners
-
+  
   window.on("load", main);
 
   window.on("scroll", navAdjust);
@@ -36,14 +37,19 @@ import { CookieManager } from './CookieManager';
     return document.querySelector(selector);
   }
 
+  function toggleOverlay() {
+    loadingOverlay.style.display == "flex" ? loadingOverlay.style.display = "none" : loadingOverlay.style.display = "flex";
+  }
+
   function scrollIntoView(id) {
     return function(e) {
-      $('html,body').animate({scrollTop: $(`#${id}`).offset().top - 200}, 'slow');
+      $('html,body').animate({scrollTop: $(`#${id}`).offset().top - 170}, 'slow');
     }
   }
 
   // ------------------------------------------------- Event handlers
   function main(e) {
+    
     // Populate footer with current year
     select("#year").innerHTML = new Date().getFullYear();
 
@@ -86,8 +92,13 @@ import { CookieManager } from './CookieManager';
       let img = projectDiv.appendChild(document.createElement("img"));
       img.id = `img${project.id}`;
       img.src = project.img;
-      
-      select(`#${img.id}`).on("click", projectView(project, img));
+      let button = projectDiv.appendChild(document.createElement("button"));
+      button.className = "readMore";
+      button.id = `button${img.id}`;
+      button.innerHTML = "<i class='fas fa-question-circle'></i></i> Read More";
+      setTimeout(toggleOverlay, 400);
+      select(".main").classList.add("fadeIn");
+      select(`#button${img.id}`).on("click", projectView(project, img));
       
     });
 
@@ -98,7 +109,7 @@ import { CookieManager } from './CookieManager';
     return function(e) {
       cookieManager = new CookieManager();
       cookieManager.setCookie("SCROLLTOP", document.documentElement.scrollTop || document.body.scrollTop, 365);
-      $(window).scrollTop($("#projects").offset().top - 200);
+      $(window).scrollTop($("#projects").offset().top - 170);
       while (projectsElem.firstChild) {
         projectsElem.removeChild(projectsElem.firstChild);
       }
@@ -112,7 +123,7 @@ import { CookieManager } from './CookieManager';
           <div class="column">
             <p>${project.description}</p>
             <div class="buttons">
-              <a href=${project.link} target="_blank">View Live</a>
+              ${project.hasOwnProperty("link") ? `<a href=${project.link} target="_blank">View Live</a>` : ''}
               <i class="fas fa-backspace fa-3x" id="close"></i>
             </div>
           </div>
@@ -135,10 +146,10 @@ import { CookieManager } from './CookieManager';
 
   function navAdjust(e) {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      select(".nav").style.padding = "0em 4em 0em 4em";
+      select(".nav").style.padding = "0em 5em 0em 5em";
       //select(".nav").style.backgroundColor = "hsl(0, 100%, 60%)";
     } else {
-      select(".nav").style.padding = "1em 4em 1em 4em";
+      select(".nav").style.padding = "1em 5em 1em 5em";
       //select(".nav").style.backgroundColor = "#2b2b2b";
     }
   }

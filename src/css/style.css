@@ -1,10 +1,8 @@
 @keyframes fadeInImg {
   0% {
-    opacity: 0;
-    margin-top: 5em; }
+    opacity: 0; }
   100% {
-    opacity: 1.0;
-    margin-top: 0; } }
+    opacity: 1.0; } }
 
 * {
   box-sizing: border-box; }
@@ -16,6 +14,22 @@ body {
   color: white;
   font-family: 'Montserrat', sans-serif;
   margin: 0; }
+  body .loadingOverlay {
+    position: fixed;
+    z-index: 999;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow: show;
+    margin: auto;
+    background-color: #2b2b2b;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    color: #ff3333;
+    font-size: 48px; }
 
 a {
   text-decoration: none; }
@@ -28,7 +42,7 @@ a {
   left: 0;
   top: 0;
   right: 0;
-  padding: 1em 4em 1em 4em;
+  padding: 1em 5em 1em 5em;
   margin-bottom: 2em;
   background-color: #ff3333;
   opacity: 0.9;
@@ -83,7 +97,7 @@ a {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 4em 1em 4em; }
+    padding: 1em 5em 1em 5em; }
     .footer__content--social > a {
       color: #2b2b2b;
       font-size: 3.5em; }
@@ -92,11 +106,11 @@ a {
       .footer__content--social > a:not(:last-child) {
         margin-right: 0.3em; }
 
-.active {
-  border-top: solid 2px #2b2b2b; }
+.fadeIn {
+  animation: fadeInImg 2s ease-in-out; }
 
 .main {
-  padding: 1em 4em 1em 4em; }
+  padding: 1em 5em 1em 5em; }
   .main__intro {
     display: -webkit-box;
     display: -moz-box;
@@ -106,8 +120,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5em;
-    animation: fadeInImg 1.3s ease-in-out; }
+    margin-bottom: 2em; }
     .main__intro .me {
       border-radius: 50%;
       text-align: center;
@@ -116,7 +129,14 @@ a {
       margin: auto;
       margin-bottom: 2em; }
   .main__about {
-    font-size: 1.3em; }
+    font-size: 1.2em;
+    line-height: 1.5; }
+    .main__about a {
+      -webkit-transition: color 0.4s;
+      transition: color 0.4s;
+      color: #ff3333; }
+      .main__about a:hover {
+        color: white; }
   .main__skills i {
     font-size: 3.3em;
     margin-right: 0.3em;
@@ -184,9 +204,16 @@ a {
       justify-content: space-between; }
       .main__projects .tile h5 {
         margin: 0 0 1em 0; }
-      .main__projects .tile .project:hover {
-        opacity: 0.9;
-        cursor: pointer; }
+      .main__projects .tile .project button {
+        -webkit-transition: background 0.4s;
+        transition: background 0.4s;
+        width: 100%;
+        background: #ff3333;
+        padding: 1em;
+        border: 0; }
+        .main__projects .tile .project button:hover {
+          cursor: pointer;
+          background: #ff4747; }
     .main__projects div.tile {
       height: auto;
       background: #696969;
@@ -196,48 +223,23 @@ a {
       .main__projects div.tile img {
         max-width: 100%; }
   .main__contact {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center; }
-    .main__contact label {
-      display: block; }
-    .main__contact input[type="text"], .main__contact input[type="email"], .main__contact button[type="submit"] {
-      height: 3em;
-      border: solid 1px white; }
-    .main__contact textarea {
-      border: solid 1px white; }
-    .main__contact input[type="text"], .main__contact input[type="email"], .main__contact textarea, .main__contact button[type="submit"] {
-      -webkit-transition: background 0.6s;
-      transition: background 0.6s;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: center; }
+    .main__contact a {
       display: block;
-      width: 30vw;
-      background: #2b2b2b;
-      color: white;
-      margin-bottom: 1em; }
-      .main__contact input[type="text"]:focus, .main__contact input[type="email"]:focus, .main__contact textarea:focus, .main__contact button[type="submit"]:focus {
-        outline: none;
-        border-color: #ff3333; }
-    .main__contact button[type="submit"]:hover {
-      cursor: pointer;
-      background: #ff3333;
-      -webkit-transition: background 0.6s;
-      transition: background 0.6s;
-      border: none; }
-    .main__contact button[type="submit"]:disabled {
-      color: gray;
-      background: none; }
+      -webkit-transition: color 0.4s;
+      transition: color 0.4s;
+      color: #ff3333; }
+      .main__contact a:hover {
+        color: white; }
 
 ul {
   padding: 0;
   margin: 0; }
 
 hr {
-  background-image: linear-gradient(90deg, red, transparent);
+  background: #ff3333;
   border: 0;
   height: 2px; }
 
