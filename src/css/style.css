@@ -203,6 +203,7 @@ a {
       flex-flow: column nowrap;
       justify-content: space-between; }
       .main__projects .tile h5 {
+        font-size: 0.8em;
         margin: 0 0 1em 0; }
       .main__projects .tile .project button {
         -webkit-transition: background 0.4s;
