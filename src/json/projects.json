@@ -30,7 +30,7 @@
     {
         "id": 5,
         "name": "JavaScript Weather App",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam fugiat ipsum laborum iusto tempora excepturi, eum quasi eaque dolorem alias odio culpa impedit voluptatibus ad soluta numquam fuga atque blanditiis tenetur. Dolorum iusto tempora unde voluptatem. Sed facere nam quis.Lorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisicLorem ipsum dolor sit amet consectetur adipisic",
         "img": "assets/img/weatherReporter.PNG",
         "link": "http://weather-reporter.azurewebsites.net/"
     },

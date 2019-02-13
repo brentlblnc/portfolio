@@ -56,16 +56,19 @@ a {
   right: 0;
   padding: 1em 4em 1em 4em;
   margin-bottom: 2em;
-  background-color: $background-color;
+  background-color: $footer-color;
   opacity: 0.9;
   @include display-flex();
   justify-content: space-between;
   &__logo {
     // Placeholder styling until logo actually gets used
     &--name {
-      font-size: 1.3em;
+      font-size: 1.4em;
     }
-    font-size: 1.5em;
+    &--title {
+      font-size: 1.2em;
+    }
+    //font-size: 1.3em;
     // -webkit-transition: 0.4s;
     // transition: 0.4s;
     //@include transition(0.4s);
@@ -78,13 +81,13 @@ a {
     li {
       color: white;
       list-style-type: none;
-      //@include transition(color 0.6s);
+      @include transition(color 0.6s);
+
       &:hover {
         cursor: pointer;
         color: $hover-color;
         // -webkit-transition: color .6s;
         // transition: color .6s;
-        @include transition(color .6s);
       }
       
   
@@ -162,7 +165,7 @@ a {
 
   &__skills {
     i {
-      font-size: 3.5em;
+      font-size: 3.3em;
       margin-right: 0.3em;
       margin-bottom: 0.3em;
     }
@@ -172,15 +175,71 @@ a {
       justify-content: space-between;
     } 
   }
+  &__projectView {
+    button {
+      margin-bottom: 1em;
+      width: auto;
+    }
+    .project {
+      @include display-flex();
+      flex-direction: row;
+      .column {
+        @include display-flex();
+        flex-direction: column;
+        .buttons {
+          @include display-flex();
+          flex-direction: column;
+          a {
+            display: inline-block;
+            padding-bottom: 1em;
+            color: $footer-color;
+            @include transition(color 0.4s);
+            &:hover {
+              color: white;
+              border: none;
+            }
+          }
+        }
+      }
+      
+    }
+    img {
+      align-self: start;
+      width: 20em;
+      min-width: 20em;
+      max-width: 100%;
+      margin-right: 1em;
+      margin-bottom: 1em;
+    }
+    
+    p {
+      //max-width: 50%;
+      margin: 0 1em 1em 0;
+      padding: 0;
+    }
+  }
 
   &__projects {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 1em;
+    button {
+      display: block;
+    }
     .tile {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
+      h5 {
+        margin: 0 0 1em 0;
+        //padding: 0;
+      }
+      .project {
+        &:hover {
+          opacity: 0.9;
+          cursor: pointer;
+        }
+      }
     }
     div.tile {
       height: auto;
@@ -192,28 +251,17 @@ a {
       img {
         max-width: 100%;
       }
-      button {
-        display: block;
-        width: 100%;
-        height: 4em;
-        background: transparent;
-        border: solid 1px white;
-        color: white;
-        &:hover {
-          cursor: pointer;
-          background: $footer-color;
-          // -webkit-transition: background .6s;
-          // transition: background .6s;
-          @include transition(background .6s);
-          border: none;
-        }
-        &:focus {
-          outline: none;
-        }
-        // -webkit-transition: background .6s;
-        // transition: background .6s;
-        @include transition(background .6s);
-      }
+      // button {
+      //   display: block;
+      //   width: 100%;
+      
+      //   &:focus {
+      //     outline: none;
+      //   }
+      //   // -webkit-transition: background .6s;
+      //   // transition: background .6s;
+      //   @include transition(background .6s);
+      // }
     }
   }
   &__contact {
@@ -273,7 +321,7 @@ hr {
     height: 2px;
 }
 
-@media screen and (max-width: 847px) {
+@media screen and (max-width: 660px) {
   .nav {
     display: none;
   }
@@ -305,7 +353,7 @@ hr {
     i.fas.fa-bars {
       margin: 0;
       padding: 0;
-      font-size: 2.5em;
+      font-size: 1.8em;
     }
     &__links {
       &--close {
@@ -327,9 +375,21 @@ hr {
 
   .main {
     padding: 1em;
-    text-align: center;
+    //text-align: left;
     &__projects {
       grid-template-columns: 1fr;
+    }
+    &__projectView {
+      .project {
+        @include display-flex();
+        flex-direction: column;
+        .column {
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+      
     }
     &__contact {
       input[type="text"], input[type="email"], textarea, button[type="submit"] {
@@ -351,7 +411,7 @@ hr {
   }
 }
 
-@media screen and (min-width: 760px) and (max-width: 847px) {
+@media screen and (min-width: 660px) and (max-width: 847px) {
   .main {
     &__projects {
       grid-template-columns: repeat(2, 1fr);

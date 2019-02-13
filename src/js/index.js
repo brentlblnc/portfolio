@@ -25,7 +25,7 @@ import { CookieManager } from './CookieManager';
 
   menu.on("click", toggleSideMenu);
 
-  contactForm.on("submit", sendAJAX);
+  contactForm.on("submit", sendEmail);
 
   for (let link of linksContainer.childNodes) {
     link.on("click", toggleSideMenu);
@@ -38,7 +38,6 @@ import { CookieManager } from './CookieManager';
 
   function scrollIntoView(id) {
     return function(e) {
-      console.log("scrolling");
       $('html,body').animate({scrollTop: $(`#${id}`).offset().top - 200}, 'slow');
     }
   }
@@ -60,10 +59,10 @@ import { CookieManager } from './CookieManager';
     select("#projectsHeadingMob").on("click", scrollIntoView("projects"));
     select("#contactHeadingMob").on("click", scrollIntoView("contact"));
 
-    sendAJAX2();
+    getProjects();
   }
 
-  function sendAJAX2() {
+  function getProjects() {
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", "./../src/json/projects.json");
     xmlHttp.onreadystatechange = () => {
@@ -73,8 +72,6 @@ import { CookieManager } from './CookieManager';
       } 
     }
     xmlHttp.send();
-
-    
   }
 
   function loadProjects(projects) {
@@ -84,8 +81,8 @@ import { CookieManager } from './CookieManager';
       tile.className = "tile";
       let projectDiv = tile.appendChild(document.createElement("div"));
       projectDiv.className = "project";
-      let h3 = projectDiv.appendChild(document.createElement("h3"));
-      h3.textContent = project.name;
+      let h5 = projectDiv.appendChild(document.createElement("h5"));
+      h5.textContent = project.name;
       let img = projectDiv.appendChild(document.createElement("img"));
       img.id = `img${project.id}`;
       img.src = project.img;
@@ -105,17 +102,32 @@ import { CookieManager } from './CookieManager';
       while (projectsElem.firstChild) {
         projectsElem.removeChild(projectsElem.firstChild);
       }
-      projectsElem.innerHTML = `<div class="tile"><img src=${img.src}></div>`;
-      projectsElem.innerHTML += project.description;
-      projectsElem.innerHTML += "<i class='fas fa-backspace' id='close'></i>";
-
+      projectsElem.classList.remove("main__projects");
+      projectsElem.classList.add("main__projectView");
+      
+      projectsElem.innerHTML += `
+        <h3>${project.name}</h3>
+        <div class="project">
+          <img src=${img.src}>
+          <div class="column">
+            <p>${project.description}</p>
+            <div class="buttons">
+              <a href=${project.link} target="_blank">View Live</a>
+              <i class="fas fa-backspace fa-3x" id="close"></i>
+            </div>
+          </div>
+        </div>
+      `;
+      
       select("#close").on("click", e => {
-      while (projectsElem.firstChild) {
-        projectsElem.removeChild(projectsElem.firstChild);
-      }
-        
-      loadProjects(projectsList);
-      document.documentElement.scrollTop = document.body.scrollTop = cookieManager.getCookie("SCROLLTOP");
+        while (projectsElem.firstChild) {
+          projectsElem.removeChild(projectsElem.firstChild);
+        }
+        projectsElem.classList.remove("main__projectView");
+        projectsElem.classList.add("main__projects");
+          
+        loadProjects(projectsList);
+        document.documentElement.scrollTop = document.body.scrollTop = cookieManager.getCookie("SCROLLTOP");
       });
     }
     
@@ -124,10 +136,10 @@ import { CookieManager } from './CookieManager';
   function navAdjust(e) {
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
       select(".nav").style.padding = "0em 4em 0em 4em";
-      select(".nav").style.backgroundColor = "hsl(0, 100%, 60%)";
+      //select(".nav").style.backgroundColor = "hsl(0, 100%, 60%)";
     } else {
       select(".nav").style.padding = "1em 4em 1em 4em";
-      select(".nav").style.backgroundColor = "#2b2b2b";
+      //select(".nav").style.backgroundColor = "#2b2b2b";
     }
   }
 
@@ -142,7 +154,7 @@ import { CookieManager } from './CookieManager';
     }
   }
 
-  function sendAJAX(e) {
+  function sendEmail(e) {
     e.preventDefault();
     
     submitBtn.disabled = true;
