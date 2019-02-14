@@ -193,9 +193,9 @@ a {
             border: none; }
   .main__projectView img {
     align-self: start;
-    width: 20em;
-    min-width: 20em;
-    max-width: 100%;
+    width: 18em;
+    min-width: 18em;
+    max-width: 18em;
     margin-right: 1em;
     margin-bottom: 1em; }
   .main__projectView p {
