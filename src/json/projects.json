@@ -2,8 +2,9 @@
     {
         "id": 1,
         "name": "Tech Roster Admin Web App",
-        "description": "<p>The tech roster is a MEAN stack web app where users can add, update, or delete technologies and courses. The front end was built with Angular 4 and uses custom routes for each component.</p><p>When the list is changed, a custom data service handles requests to the Node.js and Express.js backend, which pulls data from a MongoDB database. I don't currently have this project hosted, but if you'd like to see code samples, don't hesitate to ask!</p>",
-        "img": "assets/img/techRosterEdit.PNG"
+        "description": "<p>The tech roster is a MEAN stack web app where users can add, update, or delete technologies and courses. The front end was built with Angular 4 and uses custom routes for each component.</p><p>When the list is changed, a custom data service handles requests to the Node.js and Express.js backend, which queries data from a MongoDB database.</p>",
+        "img": "assets/img/techRosterEdit.PNG",
+        "link": "https://tech-roster.herokuapp.com"
     },
     {
         "id": 2,
