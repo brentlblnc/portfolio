@@ -35,9 +35,8 @@
     },
     {
         "id": 6,
-        "name": "Staghorn Shooting Club Website",
-        "description": "<p>During my campus-based field experience at the end of first year, I had the opportunity to develop an official website for the Staghorn Shooting Club, based in Stellarton. This was my first extensive exercise in WordPress development and it was a valuable learning experience. I personally customized an existing theme with CSS and dabbled in some PHP to enable or disable certain widgets on the page. I used quite a bit of Flexbox as well as media queries in this project for responsiveness.</p>",
-        "img": "assets/img/staghorn.png",
-        "link": "https://staghornshootingclub.leblancb.nscctruro.ca/"
+        "name": "LinkBoard: A Bookmark Web App",
+        "description": "<p>This app features a collection of commonly used links, and includes an administration end for adding, editing, and deleting links. I use it as the default homepage on my personal laptop. Although it doesn't seem like much, developing this app really helped me learn the ins and outs of ASP.NET Core.</p><p>Link coming soon!</p>",
+        "img": "assets/img/linkBoard.png"
     }
 ]
